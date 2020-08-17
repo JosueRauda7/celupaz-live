@@ -40,5 +40,3 @@ function verVideo(context) {
 	context.drawImage(videoStream, 0, 0, context.width, context.height);
 	socket.emit("stream", canvas.toDataURL("image/webp"));
 }
-
-socket.on("disconnect", () => {});

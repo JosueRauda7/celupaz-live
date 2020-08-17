@@ -5,4 +5,8 @@ io.on("connection", (client) => {
 		// Emitir a todos los clientes
 		client.broadcast.emit("stream", data);
 	});
+
+	client.on("disconnect", () => {
+		client.broadcast.emit("off-air");
+	});
 });
