@@ -1,0 +1,4 @@
+# Carpeta build
+/build
+# Nodulos de Node
+/node_modules
