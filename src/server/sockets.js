@@ -1,4 +1,4 @@
-const { io } = require("../../index");
+const { io } = require("./index");
 
 io.on("connection", (client) => {
 	client.on("stream", (data) => {

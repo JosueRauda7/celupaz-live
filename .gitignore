@@ -2,3 +2,4 @@
 /build
 # Nodulos de Node
 /node_modules
+.vercel
