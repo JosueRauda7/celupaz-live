@@ -1,5 +1,5 @@
-# Carpeta build
-/build
+# # Carpeta build
+# /build
 # Nodulos de Node
 /node_modules
 .vercel
