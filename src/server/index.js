@@ -7,7 +7,7 @@ const app = express();
 let server = http.createServer(app);
 
 const puerto = process.env.PORT || 3000;
-const publicPath = path.resolve(__dirname + "./../public");
+const publicPath = path.resolve(__dirname + "./../../build");
 
 app.use(express.static(publicPath));
 
