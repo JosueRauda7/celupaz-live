@@ -1,4 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-ReactDOM.render(<h1>Hola, crayola</h1>, document.getElementById("app"));
+// Components
+import HolaMundo from "./components/HolaMundo/HolaMundo";
+
+ReactDOM.render(<HolaMundo />, document.getElementById("app"));
