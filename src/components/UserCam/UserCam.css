@@ -1,5 +1,7 @@
 .UserCam {
-	margin: 15px;
+	margin: 15px auto;
+	width: 650px;
+	height: 420px;
 }
 
 .UserCam video {
@@ -7,8 +9,11 @@
 }
 
 .UserCam canvas {
-	background-color: cadetblue;
 	width: 650px;
 	height: 420px;
 	border-radius: 5px;
+}
+
+.preview canvas {
+	box-shadow: 0 0 4px black;
 }

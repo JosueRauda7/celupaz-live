@@ -3,6 +3,8 @@
 	padding: 15px;
 	display: flex;
 	align-items: center;
+	background-color: #2c3140;
+	font-family: "Open Sans", sans-serif;
 }
 
 .Menu ul {
