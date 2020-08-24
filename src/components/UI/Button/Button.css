@@ -1,0 +1,33 @@
+.Button {
+	padding: 10px 10px;
+	width: 100px;
+	font-family: "Open Sans", sans-serif;
+	background-color: #bdd982;
+	border: 0;
+	outline: 0;
+	border-radius: 5px;
+	color: white;
+	font-size: 12pt;
+	cursor: pointer;
+	margin: 5px 10px;
+}
+
+.Button:hover {
+	background-color: #0396a6;
+}
+
+.primary {
+	background-color: #62b821;
+}
+
+.primary:hover {
+	background-color: #95c423;
+}
+
+.danger {
+	background-color: #8c0327;
+}
+
+.danger:hover {
+	background-color: #a60321;
+}

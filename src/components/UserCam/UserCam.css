@@ -1,0 +1,14 @@
+.UserCam {
+	margin: 15px;
+}
+
+.UserCam video {
+	display: none;
+}
+
+.UserCam canvas {
+	background-color: cadetblue;
+	width: 650px;
+	height: 420px;
+	border-radius: 5px;
+}

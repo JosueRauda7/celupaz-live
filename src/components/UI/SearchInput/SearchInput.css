@@ -1,0 +1,25 @@
+.Search {
+	margin: 0 20px;
+	width: 200px;
+	padding: 5px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 12pt;
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+}
+
+.Search:focus {
+	width: 300px;
+	animation: alargar;
+	animation-duration: 1s;
+}
+
+@keyframes alargar {
+	from {
+		width: 200px;
+	}
+	to {
+		width: 300px;
+	}
+}
