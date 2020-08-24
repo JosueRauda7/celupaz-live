@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import socketIOClient from "socket.io-client";
 
-const puerto = process.env.PORT || 3000;
+// Assets
+import "./Global.css";
 
 // Components
-import HolaMundo from "./components/HolaMundo/HolaMundo";
+import Menu from "./components/Menu/Menu";
+
+const puerto = process.env.PORT || 3000;
 
 const App = (props) => {
 	useEffect(() => {
@@ -18,7 +21,7 @@ const App = (props) => {
 		});
 	});
 
-	return <HolaMundo />;
+	return <Menu />;
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));

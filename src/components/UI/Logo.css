@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+svg,
+.Off {
+	width: 15%;
+}
+
+.On {
+	animation-name: streaming;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+svg:hover {
+	cursor: pointer;
+}
+
+/* Animación de Transmición */
+@keyframes streaming {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}

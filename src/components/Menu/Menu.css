@@ -1,0 +1,30 @@
+.Menu {
+	color: white;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.Menu ul {
+	text-align: center;
+	list-style: none;
+	display: flex;
+}
+
+.Menu ul li {
+	display: block;
+	font-size: 14pt;
+	font-weight: bold;
+	margin: 0 10px;
+}
+
+.Search {
+	margin: 0 20px;
+	width: 280px;
+	padding: 5px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 12pt;
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+}
