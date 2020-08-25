@@ -24,7 +24,7 @@ const Preview = (props) => {
 			if (navigator.getUserMedia) {
 				navigator.getUserMedia(
 					{
-						video: true,
+						video: { facingMode: "user" },
 						audio: false,
 					},
 					(data) => {
@@ -45,26 +45,27 @@ const Preview = (props) => {
 		}
 	});
 
-	const handleClick = () => {
+	const handleOn = () => {
 		setState({
 			stream: true,
 		});
 	};
 
-	const handleChange = (imagen) => {
-		// console.log(imagen);
-		setState({
-			srcImg: imagen,
-		});
+	const handleOff = () => {
+		document.getElementById("videoStream").srcObject = null;
+		let canvas = document.getElementById("preview");
+		let context = canvas.getContext("2d");
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		setState({ stream: false });
 	};
 
 	let controlButtons = (
 		<div style={{ textAlign: "center" }}>
-			<Button click={handleClick} primary>
+			<Button click={handleOn} primary>
 				Emitir
 			</Button>
-			<Button click={handleClick} danger>
-				Cancelar
+			<Button click={handleOff} danger>
+				{state.stream ? "Dejar de transmitir" : "Cancelar"}
 			</Button>
 		</div>
 	);
