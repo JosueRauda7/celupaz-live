@@ -15,9 +15,10 @@ const UserCam = (props) => {
 	};
 
 	let color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+
 	return (
 		<div className={classes.join(" ")}>
-			<video src='' id='videoStream' autoPlay></video>
+			<video id='videoStream' autoPlay></video>
 			<canvas style={{ backgroundColor: color }} id='preview'></canvas>
 		</div>
 	);

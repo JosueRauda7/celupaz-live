@@ -14,7 +14,11 @@ const Button = (props) => {
 		classes.push("danger");
 	}
 
-	return <button className={classes.join(" ")}>{props.children}</button>;
+	return (
+		<button onClick={props.click} className={classes.join(" ")}>
+			{props.children}
+		</button>
+	);
 };
 
 export default Button;

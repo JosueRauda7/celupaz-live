@@ -6,6 +6,7 @@
 
 .UserCam video {
 	display: none;
+	max-width: 650px;
 }
 
 .UserCam canvas {
