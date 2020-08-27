@@ -17,11 +17,11 @@ const Preview = (props) => {
 	socket.on("connect", () => {
 		//Si está emitiendo
 		if (state.stream) {
-			navigator.getUserMedia =
-				navigator.getUserMedia ||
-				navigator.webkitGetUserMedia ||
-				navigator.mozGetUserMedia ||
-				navigator.msgGetUserMedia;
+			navigator.mediaDevices.getUserMedia =
+				navigator.mediaDevices.getUserMedia ||
+				navigator.mediaDevices.webkitGetUserMedia ||
+				navigator.mediaDevices.mozGetUserMedia ||
+				navigator.mediaDevices.msgGetUserMedia;
 
 			if (navigator.getUserMedia) {
 				navigator.mediaDevices
