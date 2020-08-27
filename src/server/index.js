@@ -1,7 +1,7 @@
 const express = require("express");
 const socketIO = require("socket.io");
 const path = require("path");
-const http = require("https");
+const http = require("http");
 
 const app = express();
 let server = http.createServer(app);
@@ -11,6 +11,11 @@ const publicPath = path.resolve(__dirname + "./../../build");
 // const publicPath = path.resolve(__dirname + "./../public");
 
 app.use(express.static(publicPath));
+
+// Configuración para react-router-dom
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname + "./../../build/index.html"));
+});
 
 // Sockets
 module.exports.io = socketIO(server);

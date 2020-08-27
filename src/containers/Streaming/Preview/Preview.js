@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { Helmet } from "react-helmet";
 
 // Components
 import Button from "../../../components/UI/Button/Button";
@@ -11,6 +12,7 @@ const Preview = (props) => {
 	});
 
 	let socket = io();
+	let localstream;
 
 	socket.on("connect", () => {
 		//Si está emitiendo
@@ -25,9 +27,10 @@ const Preview = (props) => {
 				navigator.getUserMedia(
 					{
 						video: { facingMode: "user" },
-						audio: false,
+						audio: true,
 					},
 					(data) => {
+						localstream = data;
 						let video = document.getElementById("videoStream");
 						video.srcObject = data;
 						let canvas = document.getElementById("preview");
@@ -36,7 +39,7 @@ const Preview = (props) => {
 						context.height = canvas.height;
 						setInterval(() => {
 							context.drawImage(video, 0, 0, context.width, context.height);
-							// handleChange(canvas.toDataURL("image/webp"));
+							socket.emit("stream", canvas.toDataURL("image/webp"));
 						}, 100);
 					},
 					(err) => console.log(err)
@@ -52,10 +55,15 @@ const Preview = (props) => {
 	};
 
 	const handleOff = () => {
+		//Dejando src de vídeo null y limpiando canvas
 		document.getElementById("videoStream").srcObject = null;
 		let canvas = document.getElementById("preview");
 		let context = canvas.getContext("2d");
 		context.clearRect(0, 0, canvas.width, canvas.height);
+		//Apagando cámara y audio
+		localstream.getTracks().forEach((track) => {
+			track.stop();
+		});
 		setState({ stream: false });
 	};
 
@@ -78,6 +86,9 @@ const Preview = (props) => {
 
 	return (
 		<Fragment>
+			<Helmet>
+				<title>Vista Previa</title>
+			</Helmet>
 			<h1 className='centered'>Preparación para Transmitir</h1>
 			<div className='UserCam'>
 				<video id='videoStream' autoPlay></video>
