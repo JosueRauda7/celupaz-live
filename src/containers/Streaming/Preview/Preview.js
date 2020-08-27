@@ -12,7 +12,7 @@ const Preview = (props) => {
 	});
 
 	let socket = io();
-	let localstream;
+	let localstream, width, height;
 
 	socket.on("connect", () => {
 		//Si está emitiendo
@@ -24,26 +24,37 @@ const Preview = (props) => {
 				navigator.msgGetUserMedia;
 
 			if (navigator.getUserMedia) {
-				navigator.getUserMedia(
-					{
-						video: { facingMode: "user" },
-						audio: true,
-					},
-					(data) => {
+				navigator.mediaDevices
+					.getUserMedia({
+						video: {
+							facingMode: "user",
+						},
+						audio: false,
+					})
+					.then((data) => {
 						localstream = data;
 						let video = document.getElementById("videoStream");
 						video.srcObject = data;
+						// data.getVideoTracks()[0].readyState
+						// data.getVideoTracks()[0].stop();
+						width = data.getVideoTracks()[0].getSettings().width;
+						height = data.getVideoTracks()[0].getSettings().height;
 						let canvas = document.getElementById("preview");
 						let context = canvas.getContext("2d");
 						context.width = canvas.width;
 						context.height = canvas.height;
 						setInterval(() => {
-							context.drawImage(video, 0, 0, context.width, context.height);
+							context.drawImage(
+								video,
+								(context.width - width / 3) / 2,
+								0,
+								width / 3,
+								height / 3
+							);
 							socket.emit("stream", canvas.toDataURL("image/webp"));
 						}, 100);
-					},
-					(err) => console.log(err)
-				);
+					})
+					.catch((err) => console.log(err));
 			}
 		}
 	});
@@ -61,10 +72,13 @@ const Preview = (props) => {
 		let context = canvas.getContext("2d");
 		context.clearRect(0, 0, canvas.width, canvas.height);
 		//Apagando cámara y audio
-		localstream.getTracks().forEach((track) => {
-			track.stop();
-		});
+		if (state.stream) {
+			localstream.getTracks().forEach((track) => {
+				track.stop();
+			});
+		}
 		setState({ stream: false });
+		socket.emit("off-air", {});
 	};
 
 	let controlButtons = (
@@ -73,7 +87,7 @@ const Preview = (props) => {
 				Emitir
 			</Button>
 			<Button click={handleOff} danger>
-				{state.stream ? "Dejar de transmitir" : "Cancelar"}
+				{state.stream ? "Detener" : "Cancelar"}
 			</Button>
 		</div>
 	);
@@ -82,7 +96,8 @@ const Preview = (props) => {
 		return Math.floor(Math.random() * 220) + 80;
 	};
 
-	let color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+	// let color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+	let color = `#2e3440`;
 
 	return (
 		<Fragment>
@@ -93,8 +108,8 @@ const Preview = (props) => {
 			<div className='UserCam'>
 				<video id='videoStream' autoPlay></video>
 				<canvas style={{ backgroundColor: color }} id='preview'></canvas>
+				{controlButtons}
 			</div>
-			{controlButtons}
 		</Fragment>
 	);
 };

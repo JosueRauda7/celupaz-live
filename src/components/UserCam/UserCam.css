@@ -15,6 +15,28 @@
 	border-radius: 5px;
 }
 
-.preview canvas {
+.UserCam canvas {
 	box-shadow: 0 0 4px black;
+}
+
+.WatchCam {
+	margin: 15px auto;
+	width: 650px;
+	height: 420px;
+	/* width: 320px;
+	height: 180px; */
+	background-color: #2e3440;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.WatchCam img {
+	height: 100%;
+	/* width: 100%; */
+}
+
+.UnWatch {
+	display: none;
 }
