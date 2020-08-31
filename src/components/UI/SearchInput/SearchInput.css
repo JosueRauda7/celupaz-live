@@ -1,5 +1,4 @@
 .Search {
-	margin: 0 20px;
 	width: 200px;
 	padding: 5px;
 	font-family: "Open Sans", sans-serif;
@@ -7,6 +6,7 @@
 	border-radius: 5px;
 	border: 0;
 	outline: 0;
+	display: block;
 }
 
 .Search:focus {

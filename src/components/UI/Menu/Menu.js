@@ -1,17 +1,32 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./Menu.css";
 import Logo from "../Logo/Logo";
 import SearchInput from "../SearchInput/SearchInput";
+import { NavLink, Link } from "react-router-dom";
 
 const Menu = (props) => {
 	return (
 		<div className='Menu'>
-			<Logo />
+			<Link className='LinkLogo' to='/'>
+				<Logo />
+			</Link>
 			<SearchInput />
 			<ul>
-				<li>Inicio</li>
-				<li>Células</li>
-				<li>About</li>
+				<li>
+					<NavLink className='Link' activeClassName='Visited' exact to='/'>
+						Inicio
+					</NavLink>
+				</li>
+				<li>
+					<NavLink className='Link' activeClassName='Visited' to='/celulas'>
+						Células
+					</NavLink>
+				</li>
+				<li>
+					<NavLink className='Link' activeClassName='Visited' to='/about'>
+						About
+					</NavLink>
+				</li>
 			</ul>
 		</div>
 	);

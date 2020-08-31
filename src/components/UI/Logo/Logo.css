@@ -2,7 +2,9 @@
 
 svg,
 .Off {
-	width: 15%;
+	width: 80%;
+	padding: auto;
+	display: block;
 }
 
 .On {

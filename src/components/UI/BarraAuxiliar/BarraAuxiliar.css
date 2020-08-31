@@ -1,0 +1,45 @@
+.BarraAuxiliar {
+	width: 349px;
+	height: 100vh;
+	position: fixed;
+	float: right;
+	right: 0;
+	padding: 0;
+}
+
+.BarraAuxiliar hr {
+	margin: 0;
+}
+
+.BarraAuxiliar ul {
+	list-style: none;
+	padding: 0;
+	overflow-y: scroll;
+	height: 429px;
+}
+
+.BarraAuxiliar ul::-webkit-scrollbar {
+	width: 8px;
+}
+
+.BarraAuxiliar ul::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: var(--darklight);
+}
+
+.BarraAuxiliar ul::-webkit-scrollbar-thumb:hover {
+	border-radius: 4px;
+	background: #8096d9;
+}
+
+.BarraAuxiliar ul .Link {
+	text-decoration: none;
+	color: var(--dark);
+	line-height: 8px;
+	padding: 2px 11px;
+	display: block;
+}
+
+.BarraAuxiliar ul .Link:hover {
+	background-color: #e5e5e5;
+}

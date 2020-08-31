@@ -9,19 +9,21 @@ import "./Global.css";
 import Layout from "./components/UI/Layout/Layout";
 
 // Containers
+import Inicio from "./containers/Inicio/Inicio";
 import Preview from "./containers/Streaming/Preview/Preview";
 import ViewPage from "./containers/Streaming/ViewPage/ViewPage";
 
 const App = (props) => {
 	return (
-		<Layout>
-			<BrowserRouter>
+		<BrowserRouter>
+			<Layout>
 				<Switch>
+					<Route exact path='/' component={Inicio} />
 					<Route exact path='/preview' component={Preview} />
 					<Route exact path='/watch' component={ViewPage} />
 				</Switch>
-			</BrowserRouter>
-		</Layout>
+			</Layout>
+		</BrowserRouter>
 	);
 };
 

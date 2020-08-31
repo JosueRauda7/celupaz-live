@@ -1,0 +1,33 @@
+.RemaTxt {
+	width: 88%;
+	background-color: white;
+	min-width: 88%;
+	max-width: 88%;
+	height: auto;
+	user-select: text;
+	padding: 9px 5px;
+	border: 0;
+	outline: 0;
+	line-height: 20pt;
+	resize: vertical;
+	overflow: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	border-radius: var(--card);
+	font-size: 14pt;
+	font-family: "Open Sans", sans-serif;
+}
+
+.RemaTxt::-webkit-scrollbar {
+	width: 8px;
+}
+
+.RemaTxt::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: var(--darklight);
+}
+
+.RemaTxt::-webkit-scrollbar-thumb:hover {
+	border-radius: 4px;
+	background: #8096d9;
+}

@@ -31,3 +31,21 @@
 .danger:hover {
 	background-color: #a60321;
 }
+
+.info {
+	background-color: #1d6eaf;
+}
+
+.info:hover {
+	background-color: #268bdd;
+}
+
+.Right {
+	padding: 10px 0;
+	float: right;
+}
+
+.Left {
+	padding: 10px 0;
+	float: right;
+}

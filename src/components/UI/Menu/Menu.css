@@ -3,7 +3,7 @@
 	padding: 15px;
 	display: flex;
 	align-items: center;
-	background-color: #2c3140;
+	background-color: var(--dark);
 	font-family: "Open Sans", sans-serif;
 }
 
@@ -14,8 +14,29 @@
 }
 
 .Menu ul li {
-	display: block;
+	display: inline-block;
 	font-size: 14pt;
 	font-weight: bold;
 	margin: 0 10px;
+}
+
+.LinkLogo {
+	width: 240px;
+	display: block;
+}
+
+.Link {
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+
+.Link:hover {
+	text-decoration: underline;
+}
+
+.Visited {
+	color: var(--terciary);
+	text-shadow: 0 0 1px white;
+	text-decoration: underline;
 }

@@ -1,0 +1,35 @@
+.BarraLateral {
+	width: 299px;
+	height: 100vh;
+	position: fixed;
+	background-color: #eeeeee;
+	border-color: var(--dark);
+}
+
+.BarraLateral ul {
+	list-style: none;
+	padding: 0;
+}
+
+.BarraLateral ul .Link {
+	display: flex;
+	font-weight: bold;
+	list-style: none;
+	color: var(--dark);
+	text-decoration: none;
+	width: 279px;
+	margin: 5px 0;
+	padding: 20px 10px;
+	border-radius: 19px;
+	align-items: center;
+}
+
+.BarraLateral ul .Link svg {
+	width: 34px;
+	margin-right: 10px;
+}
+
+.BarraLateral ul .Link:hover {
+	background-color: var(--dark);
+	color: aliceblue;
+}

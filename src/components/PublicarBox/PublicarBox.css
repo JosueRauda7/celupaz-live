@@ -1,0 +1,25 @@
+.PublicarBox {
+	width: auto;
+	height: auto;
+	padding: 10px 20px;
+	border-radius: var(--card);
+	color: var(--dark);
+	background-color: #e5e5e5;
+}
+
+.PublicarBox .ButtonControl {
+	text-align: right;
+}
+
+.PublicarBox .Input {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.PublicarBox .Input svg {
+	height: 49px;
+	width: 49px;
+	margin-right: 10px;
+	border-radius: 100%;
+	background-color: white;
+}
