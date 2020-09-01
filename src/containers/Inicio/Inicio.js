@@ -1,4 +1,5 @@
 import React from "react";
+import "./Inicio.css";
 
 // Components
 import BarraLateral from "../../components/UI/BarraLateral/BarraLateral";
@@ -7,7 +8,7 @@ import BarraAuxiliar from "../../components/UI/BarraAuxiliar/BarraAuxiliar";
 
 const Inicio = (props) => {
 	return (
-		<div>
+		<div className='Inicio'>
 			<BarraLateral />
 			<BarraAuxiliar />
 			<Muro usuario='Josué Rauda' />

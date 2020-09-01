@@ -25,6 +25,12 @@ const Muro = (props) => {
 				rema:
 					"Ama al Señor tu Dios con todo tu corazón, con toda tu alma y con todas tus fuerzas",
 			},
+			{
+				id: 3,
+				usuario: "Andrea Clemente",
+				rema:
+					"Ama al Señor tu Dios con todo tu corazón, con toda tu alma y con todas tus fuerzas",
+			},
 		],
 	});
 

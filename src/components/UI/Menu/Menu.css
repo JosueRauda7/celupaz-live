@@ -1,5 +1,7 @@
 .Menu {
 	color: white;
+	width: 100%;
+	position: fixed;
 	padding: 15px;
 	display: flex;
 	align-items: center;
