@@ -1,0 +1,29 @@
+.Rema {
+	background-color: #e5e5e5;
+	border-radius: var(--card);
+	padding: 10px 12px;
+	margin-top: 15px;
+}
+
+.Rema svg {
+	height: 39px;
+	width: 39px;
+	margin-right: 10px;
+	border-radius: 100%;
+	background-color: white;
+}
+
+.Rema .UserLabel {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--dark);
+}
+
+.Rema .UserLabel:hover p {
+	text-decoration: underline;
+}
+
+.Rema .UserLabel p {
+	font-weight: bold;
+}
